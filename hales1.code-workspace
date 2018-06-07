@@ -1,16 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "folklore"
-		},
-		{
-			"path": "/Users/radix/Desktop/git/them/lean/library/init/algebra"
+			"path": "D:/lean/library/init/algebra"
 		},
 		{
 			"path": "_target/deps/mathlib"
-		},
-		{
-			"path": "/Users/radix/Desktop/lean-nightly/lean-nightly-darwin/lib/lean/library/init"
 		}
 	],
 	"settings": {}
