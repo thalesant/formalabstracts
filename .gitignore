@@ -7,3 +7,4 @@
 _build/**
 sphinx/_build/**
 sphinx/.vscode/**
+/.vscode/
