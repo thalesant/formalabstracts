@@ -1,6 +1,0 @@
-TITLE
-=====
-
-Introduction
-------------
-- Hello world
