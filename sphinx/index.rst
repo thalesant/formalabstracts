@@ -30,6 +30,8 @@ Formal Abstracts in Mathematics (Main Page)
    Seifert_van-Kampen_theorem.rst
    Stone-Weierstrass_theorem.rst
    Twin_prime_conjecture.rst
+   Bertrand_postulate.rst
+   Lagrange_four_squares.rst
 
 .. toctree::
    :maxdepth: 1
