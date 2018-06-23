@@ -27,7 +27,8 @@ def mk_try_it_uri(code):
 
 def process_lean_nodes(app, doctree, fromdocname):
     for node in doctree.traverse(nodes.literal_block):
-        if node['language'] != 'lean': continue
+        if node['language'] != 'lean': continue #throws error on unlabeled code-blocks
+        #continue
 
         new_node = lean_code_goodies()
         new_node['full_code'] = node.rawsource
@@ -72,11 +73,13 @@ class LeanTestBuilder(Builder):
     def write_doc(self, docname, doctree):
         i = 0
         for node in doctree.traverse(lean_code_goodies):
-            i += 1
-            fn = os.path.join(self.outdir, '{0}_{1}.lean'.format(docname, i))
-            self.written_files.add(fn)
-            out = codecs.open(fn, 'w', encoding='utf-8')
-            out.write(node['full_code'])
+             i += 1
+             fn = os.path.join(self.outdir, '{0}_{1}.lean'.format(docname, i))
+             os.makedirs(os.path.dirname(fn), exist_ok=True)
+             self.written_files.add(fn)
+             out = codecs.open(fn, 'w', encoding='utf-8')
+             out.write(node['full_code'])
+
 
     def finish(self):
         for root, _, filenames in os.walk(self.outdir):
