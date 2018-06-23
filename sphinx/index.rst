@@ -32,8 +32,7 @@ Formal Abstracts in Mathematics (Main Page)
    Stone-Weierstrass_theorem.rst
    Twin_prime_conjecture.rst
    Bertrand_postulate.rst
-   Lagrange_four_squares.rst
-   
+   Lagrange_four_squares.rst   
 =======
    Theorems/Abel-Ruffini_theorem.rst
 
