@@ -5,12 +5,10 @@ This article gives a formal statement of Divisibility by 3 Rule.  For Wikipedia'
 description, see
 `Divisibility by 3 Rule <https://en.wikipedia.org/wiki/Divisibility_rule#Divisibility_by_3_or_9>`_.
 
-*This article is a stub. You can improve it by completing
-the formal abstract.*
 
 informally
 
-  --INSERT
+  A number is divisible by 3 if and only if the sum of its digits is divisible by 3.
 
 preformally
 
@@ -18,8 +16,15 @@ preformally
 
   --INSERT
 
+  
+
 formally
 
 .. code-block:: lean
 
-  --INSERT
+    meta def sumDigits : ℕ  → ℕ  
+    |0 := 0
+    |n:= n % 10 + sumDigits (n/10)
+    theorem divisibility_by_3 (n:ℕ ) : 3∣ (sumDigits n) ↔ 3 ∣ n := sorry
+
+    
