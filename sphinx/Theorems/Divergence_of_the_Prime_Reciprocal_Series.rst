@@ -10,7 +10,15 @@ Informally
 ----------------------------
 
 The sum of the reciprocals of all prime numbers diverges; that is:
-  
+
+.. math::
+   :nowrap:
+
+   \begin{eqnarray}
+      y    & = & ax^2 + bx + c \\
+      f(x) & = & x^2 + 2xy + y^2
+   \end{eqnarray}
+   
 .. math::
   {\displaystyle \sum _{p{\text{ prime}}}{\frac {1}{p}}={\frac {1}{2}}+{\frac {1}{3}}+{\frac {1}{5}}+{\frac {1}{7}}+{\frac {1}{11}}+\cdots =\infty }
 
