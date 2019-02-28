@@ -9,10 +9,10 @@ description, see
 Informally
 ----------------------------
 
-  The sum of the reciprocals of all prime numbers diverges; that is:
+The sum of the reciprocals of all prime numbers diverges; that is:
   
-  .. math::
-    {\displaystyle \sum _{p{\text{ prime}}}{\frac {1}{p}}={\frac {1}{2}}+{\frac {1}{3}}+{\frac {1}{5}}+{\frac {1}{7}}+{\frac {1}{11}}+\cdots =\infty }
+.. math::
+  {\displaystyle \sum _{p{\text{ prime}}}{\frac {1}{p}}={\frac {1}{2}}+{\frac {1}{3}}+{\frac {1}{5}}+{\frac {1}{7}}+{\frac {1}{11}}+\cdots =\infty }
 
 Preformally
 ----------------------------
