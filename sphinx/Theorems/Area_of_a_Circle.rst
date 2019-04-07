@@ -12,7 +12,7 @@ informally
 
   The area of a circle is :math:`π r^2`
 
-preformally 
+preformally
 
 .. code-block:: text
 
@@ -22,12 +22,12 @@ preformally
 
   closed_ball (x) (r)
 
-  pi * r^2 ≥ 0
+  pi * r^2 \geq 0
 
   Area (closed_ball (x) (r)) = pi * r^2
 
 
-formally 
+formally
 
 .. code-block:: lean
 
@@ -36,7 +36,7 @@ formally
 
   open real
 
-  lemma pi_r_sq_pos_4 (r : ℝ) (H: 0 ≤ r): 0 ≤ r^2 * pi := 
+  lemma pi_r_sq_pos_4 (r : ℝ) (H: 0 ≤ r): 0 ≤ r^2 * pi :=
   have 0 ≤ r^2, from pow_nonneg H 2,
   have 0 ≤ pi, from le_of_lt pi_pos,
   begin

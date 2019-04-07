@@ -9,17 +9,22 @@ description, see
 the formal abstract.*
 
 informally
-
-  --INSERT
+  
+    In number theory, a natural number n > 1 is a prime number if and only if the product of all the positive integers less than n is one less than a multiple of n
 
 preformally
 
 .. code-block:: text
 
-  --INSERT
+    n: interger, n>1
+    n is a prime number if and only if  ((n-1)! + 1) % n = 0
 
 formally
 
 .. code-block:: lean
 
-  --INSERT
+    import data.nat.prime data.nat.basic
+
+    theorem Wilson_Theorem : ∀ n: ℕ, n>1 → 
+                nat.prime n ↔  (nat.fact (n-1)  + 1 ) %  n =0 := sorry
+

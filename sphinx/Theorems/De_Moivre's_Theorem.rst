@@ -10,16 +10,22 @@ the formal abstract.*
 
 informally
 
-  --INSERT
+  de Moivre's formula (also known as de Moivre's theorem and de Moivre's identity), named after Abraham de Moivre, states that for any real number x and integer n it holds that
+
+  :math:`{\displaystyle {\big (}\cos(x)+i\sin(x){\big )}^{n}=\cos(nx)+i\sin(nx),}`
 
 preformally
 
 .. code-block:: text
 
-  --INSERT
+  ∀ (n:ℕ) (x:ℂ), (cos x + I * sin x)^n = cos (n*x) + I * sin (n*x) 
 
 formally
 
 .. code-block:: lean
 
-  --INSERT
+  import data.complex.exponential analysis.exponential
+  open real
+  open complex
+  theorem De_Moivres_formula: ∀ (n:ℕ) (x:ℂ), (cos x + I * sin x)^n = cos (n*x) + I * sin (n*x):= sorry 
+  

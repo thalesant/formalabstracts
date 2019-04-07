@@ -5,21 +5,27 @@ This article gives a formal statement of Lagrange's Four Squares Theorem.  For W
 description, see
 `Lagrange's Four Squares Theorem <https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem>`_.
 
-*This article is a stub. You can improve it by completing
-the formal abstract.*
 
 informally
 
-  --INSERT
+    Every natural number can be represented as the sum of four integer squares.
 
 preformally
 
 .. code-block:: text
 
-  --INSERT
+  notation:
+  (n : interger)
+  → ∃ a b c d : integer, n = a*a + b*b + c*c + d*d)  
 
 formally
 
 .. code-block:: lean
 
-  --INSERT
+		
+        theorem   Lagrange's_four_square_theorem (n :ℕ):  ∃ a b c d : ℕ, (n = a*a+b*b+c*c+d*d) :=
+        begin
+          admit,
+        end
+        
+        

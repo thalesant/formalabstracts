@@ -10,16 +10,21 @@ the formal abstract.*
 
 informally
 
-  --INSERT
+  In mathematics, the harmonic series is the divergent infinite series:
+.. math:: 
+  {\displaystyle \sum _{n=1}^{\infty }{\frac {1}{n}}=1+{\frac {1}{2}}+{\frac {1}{3}}+{\frac {1}{4}}+{\frac {1}{5}}+\cdots } {\displaystyle \sum _{n=1}^{\infty }{\frac {1}{n}}=1+{\frac {1}{2}}+{\frac {1}{3}}+{\frac {1}{4}}+{\frac {1}{5}}+\cdots }
 
 preformally
 
 .. code-block:: text
+.. math:: 
+  {\displaystyle \sum _{n=1}^{\infty }{\frac {1}{n}}=1+{\frac {1}{2}}+{\frac {1}{3}}+{\frac {1}{4}}+{\frac {1}{5}}+\cdots } {\displaystyle \sum _{n=1}^{\infty }{\frac {1}{n}}=1+{\frac {1}{2}}+{\frac {1}{3}}+{\frac {1}{4}}+{\frac {1}{5}}+\cdots }
 
-  --INSERT
-
+is divergence.
 formally
 
 .. code-block:: lean
 
-  --INSERT
+  import  topology.algebra.infinite_sum data.real.ennreal   
+theorem Diver_Harmonic_Series [topological_add_monoid ℝ] 
+: ¬ has_sum (λ n :ℕ , 1/(n+1:ℝ )) := sorry
