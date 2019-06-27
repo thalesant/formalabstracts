@@ -7,9 +7,24 @@ Square Root of 2.  For Wikipedia's description, see `Square root of 2
 
 informal
 
-  --INSERT
+  The square root of 2 is irrational.
 
-formal
+preformal
+  theorem: if :math:`p` prime then sqrt :math:`p \notin \mathbb{Q}`
 
-  --INSERT
+  corallation: sqrt 2 :math:`\notin \mathbb{Q}`
+
+formally
+
+.. code-block:: lean
+
+  import data.real.irrational data.real.basic data.nat.prime
+
+  open nat real irrational
+
+  theorem sqrt_prime_irrational {p: ℝ}: prime p → irrational (sqrt p) := sorry
+
+  lemma sqrt_2_irrational: irrational (sqrt(2: ℝ )):= sorry
+
+  
 

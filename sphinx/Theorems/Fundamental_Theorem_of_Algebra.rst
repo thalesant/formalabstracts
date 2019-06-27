@@ -8,11 +8,20 @@ description, see
 
 informally
 
-  --INSERT
+  The fundamental theorem of algebra states that every non-constant single-variable polynomial with complex coefficients has at least one complex root. This includes polynomials with real coefficients, since every real number is a complex number with an imaginary part equal to zero.
 
 preformally
+  :math:`\forall p(X)` single-variable polynomial in :math:`\mathbb{C}, \exists z \in \mathbb{C}` such that :math:`p(z) = 0` 
 
-.. code-block:: text
+formally
 
-  --INSERT
+.. code-block:: lean
+
+  import data.polynomial data.complex.basic data.real.basic
+
+  open complex real polynomial
+
+  theorem fundamental_theorem_of_algebra: ∀(p: polynomial ℂ), ∀ (c:ℂ) (p ≠ C c), ∃ (z: ℂ), is_root p z := sorry
+
+  theorem fundamental_theorem_of_algebra: ∀(p: polynomial ℂ) (H:degree p ≥ 1), ∃ (z: ℂ), is_root p z := sorry
 

@@ -10,16 +10,26 @@ the formal abstract.*
 
 informally
 
-  --INSERT
+  Pi is a transcendental number.
+
+  A transcendentalnumber is a real or complex number that is not an algebraic number, that is, not a root of a nonzero polynomial equation with integer coefficients. 
 
 preformally
 
-.. code-block:: text
+  x is_transcendental_number if :math:`\forall p` polynomial :math:`\mathbb{Z}`, x is not root of :math:`p=0`
 
-  --INSERT
+  pi is_transcendental_number
 
 formally
 
 .. code-block:: lean
 
-  --INSERT
+  import data.polynomial data.finsupp data.real.basic analysis.exponential
+
+  open polynomial
+  open real
+  open complex
+
+  def is_transcendental_number(x: ℂ) := ∀ (p:polynomial ℤ) (p ≠ 0 ), ¬ is_root p x 
+
+  theorem pi_transcandental : is_transcendental_number (pi) := sorry 
