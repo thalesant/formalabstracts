@@ -7,23 +7,19 @@ description, see
 
 Informal statement
 
-    Let π ( N ) denote the number of primes less than or equal to N. If A is a subset of the prime numbers such that
-
-    lim sup N → ∞ card( A ∩ [ 1 , N ] ) / π ( N ) > 0,
-
-    then for all positive integers k, the set A contains infinitely many increasing arithmetic progressions of length k.
-
-.. code-block:: text
-
-  notation:
-  (π (N) := card { p : prime, ℕ | p ≤ N})
-  (A : subset (prime, ℕ))
-  (positive_density : limsup N ∞ (card (A ∩ [1,N]) / π (N)) > 0)
-  (k : positive, ℕ)
-
-  theorem Green-Tao :=
-  infinite (increasing, arithmetic_progression, length k, list (subtype A) )
+    For every natural number k, there exist arithmetic progressions of primes with k terms.
   
-Notes
-=====
+preformally
 
+    Notations: k:ℕ, k>0
+    Theorem: For all k:ℕ, k>0, there exist a, d: ℕ,(d>0) such that a, a+d,..., a+(k-1)d are prime numbers.    
+    
+formally
+
+.. code-block:: lean
+
+  import data.nat.prime
+  open nat
+  theorem Green_Tao_Theorem :
+  ∀ k:ℕ, (k>0) → (∃ a: ℕ, ∃ d: ℕ,(d>0) ∧ (∀ m:ℕ, (m<k)→ (prime (a+m*d))))  
+    := sorry
