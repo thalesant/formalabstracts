@@ -17,28 +17,22 @@ preformally
 .. code-block:: text
 
   G: finite group
-  theorem lagrange_theorem : ∀ H : set G,
-  is_subgroup H ∧ fintype.card H ∣ card G
+  theorem: ∀ H : subgroup of G, card H ∣ card G.
 
 
 formally
 
 .. code-block:: lean
 
-  import group_theory.order_of_element data.zmod.basic
-  algebra.pi_instances group_theory.group_action group_theory.quotient_group
-
   import group_theory.sylow
-  open equiv fintype finset is_group_action
-  is_monoid_action function equiv.perm is_subgroup list quotient_group
+    
+  open sylow fintype
 
-  open sylow 
+  local attribute [instance, priority 0] subtype.fintype set_fintype 
+  local attribute [instance, priority 0] classical.prop_decidable
 
-  local attribute [instance, priority 0] subtype.fintype set_fintype c
-  local attribute [instance, priority 0] lassical.prop_decidable
-
-  universes u v w
-  variables {G H : Type u} {α : Type v} {β : Type w} [group G]
+  universes u 
+  variables {G H : Type u} [group G]
 
   theorem lagrange_theorem [fintype G] : ∀ H : set G, 
   is_subgroup H ∧ fintype.card H ∣ card G
