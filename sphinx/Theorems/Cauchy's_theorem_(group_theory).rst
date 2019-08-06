@@ -28,14 +28,15 @@ formally
 .. code-block:: lean
 
   import group_theory.sylow
-  open  fintype 
-        sylow 
+    
+  open sylow fintype
 
-  local attribute [instance, priority 0] subtype.fintype set_fintype classical.prop_decidable
-  
-  universes u v w
-  variables {G H : Type u} {α : Type v} {β : Type w} [group G]
+  local attribute [instance, priority 0] subtype.fintype set_fintype 
+  local attribute [instance, priority 0] classical.prop_decidable
 
-  theorem lagrange_theorem [fintype G] : ∀ H : set G, 
-  is_subgroup H ∧ fintype.card H ∣ card G
-  := sorry
+  universes u 
+  variables {G H : Type u} [group G]
+
+  theorem Cauchy_Theorem [fintype G] {p : ℕ} (hp : nat.prime p)
+  (h : p ∣ card G) : ∃ x : G, order_of x = p := sorry 
+
