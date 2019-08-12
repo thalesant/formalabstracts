@@ -5,8 +5,6 @@ This article gives a formal statement of Principle of Mathematical Induction.  F
 description, see
 `Principle of Mathematical Induction <https://en.wikipedia.org/wiki/Mathematical_induction>`_.
 
-*This article is a stub. You can improve it by completing
-the formal abstract.*
 
 informally
 
@@ -17,8 +15,8 @@ informally
 preformally
 
 .. code-block:: text
-
-  ∀ (P: ℕ), P 0 ∧ (∀ k, P k → P(k+1)) → (∀ n, P n) 
+ notation (P:ℕ→ Prop)
+ theorem P 0 ∧ (∀ k, P k → P(k+1)) → (∀ n, P n) 
 
 formally
 

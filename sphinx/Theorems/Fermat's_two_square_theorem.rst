@@ -27,5 +27,5 @@ formally
 .. code-block:: lean
 
   import data.nat.prime
-  theorem Fermat_two_square_theorem (n : ℕ) :
+  theorem Fermat_two_square_theorem: (n : ℕ)
   nat.prime n ∧ n%2=1 → (∃ x y : ℕ, n=x*x+y*y ↔ n%4=1) :=  sorry

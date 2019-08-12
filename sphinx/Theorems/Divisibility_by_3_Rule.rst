@@ -8,7 +8,7 @@ description, see
 
 informally
 
-  A number is divisible by 3 if and only if the sum of its digits is divisible by 3.
+  An integer is divisible by 3 if and only if the sum of its digits is divisible by 3.
 
 preformally
 

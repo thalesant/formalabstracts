@@ -15,7 +15,7 @@ preformally
 .. code-block:: text
 
   notation:
-  (n : interger)
+  (n : ℕ)
   → ∃ a b c d : integer, n = a*a + b*b + c*c + d*d)  
 
 formally
