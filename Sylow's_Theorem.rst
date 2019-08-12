@@ -46,9 +46,8 @@ formally
     local attribute [instance, priority 0] subtype.fintype set_fintype 
     local attribute [instance, priority 0] classical.prop_decidable
 
-    universes u v w
-    variables {G H : Type u} {α : Type v}
-    {β : Type w} [group G]
+    universes u 
+    variables {G H : Type u} [group G]
 
     theorem exists_subgroup_card_pow_prime [fintype G]{p : ℕ}(hp : nat.prime p ∧ (p ∣ card G)){n : ℕ} (hdvd : p ^ n ∣ card G ∧ ¬ (p^(n+1) ∣ card G)):
     ∃ H : set G, is_subgroup H ∧ fintype.card H = p ^ n 

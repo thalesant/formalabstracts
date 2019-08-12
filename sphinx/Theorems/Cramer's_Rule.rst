@@ -5,8 +5,6 @@ This article gives a formal statement of Cramer's Rule.  For Wikipedia's
 description, see
 `Cramer's Rule <https://en.wikipedia.org/wiki/Cramer%27s_rule>`_.
 
-*This article is a stub. You can improve it by completing
-the formal abstract.*
 
 informally
 -------------------------------------
@@ -38,15 +36,16 @@ formally
 ---------------------
 .. code-block:: lean
 
-  import ring_theory.determinant data.real.basic
+  import linear_algebra.determinant data.real.basic
 
-  open matrix
-  open real
+ open matrix
+ open real
 
-  variables (n:ℕ)
+ variables (n:ℕ)
 
-  theorem Cramer_rule{A: matrix (fin n)(fin n) ℝ}
-  {x : matrix (fin n) (fin 1) ℝ}{b : matrix (fin n) (fin 1) ℝ}
-  (h1: A.mul x = b)(h2: det(A) ≠ 0) : 
-  x =  λ t k, (det(λ i j, if j = t then b i k else A i j)/ det(A)) 
-  := sorry
+ theorem Cramer_rule{A: matrix (fin n)(fin n) ℝ}
+ {x : matrix (fin n) (fin 1) ℝ}{b : matrix (fin n) (fin 1) ℝ}
+ (h1: A.mul x = b)(h2: det(A) ≠ 0) :
+ x =  λ t k, (det(λ i j, if j = t then b i k else A i j)/ det(A))
+ := sorry
+

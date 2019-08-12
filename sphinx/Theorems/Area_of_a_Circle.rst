@@ -5,12 +5,10 @@ This article gives a formal statement of Area of a Circle.  For Wikipedia's
 description, see
 `Area of a Circle <https://en.wikipedia.org/wiki/Area_of_a_circle>`_.
 
-*This article is a stub. You can improve it by completing
-the formal abstract.*
 
 informally
 
-  The area of a circle is :math:`π r^2`
+   The area enclosed by a circle of radius r is :math:`π r^2`
 
 preformally
 
@@ -36,7 +34,7 @@ formally
 
   open real
 
-  lemma pi_r_sq_pos_4 (r : ℝ) (H: 0 ≤ r): 0 ≤ r^2 * pi :=
+  lemma pi_r_sq_pos (r : ℝ) (H: 0 ≤ r): 0 ≤ r^2 * pi :=
   have 0 ≤ r^2, from pow_nonneg H 2,
   have 0 ≤ pi, from le_of_lt pi_pos,
   begin
@@ -46,6 +44,5 @@ formally
   namespace measure_theory
   open measure_space
   theorem Area (x : ℝ × ℝ) (r : ℝ) (H: r ≥ 0)[measure_space(ℝ × ℝ)]: volume(metric.closed_ball (x) (r)) = some ⟨ r^2 * pi, pi_r_sq_pos r H⟩ := sorry
-  #check Area
-
+  
   end measure_theory

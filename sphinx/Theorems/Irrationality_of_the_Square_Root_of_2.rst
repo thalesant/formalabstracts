@@ -12,7 +12,7 @@ informal
 preformal
   theorem: if :math:`p` prime then sqrt :math:`p \notin \mathbb{Q}`
 
-  corallation: sqrt 2 :math:`\notin \mathbb{Q}`
+  corollary: sqrt 2 :math:`\notin \mathbb{Q}`
 
 formally
 
@@ -22,7 +22,7 @@ formally
 
   open nat real irrational
 
-  theorem sqrt_prime_irrational {p: ℝ}: prime p → irrational (sqrt p) := sorry
+  theorem sqrt_prime_irrational {p: ℕ}: prime p → irrational (sqrt(p:ℝ)) := sorry
 
   lemma sqrt_2_irrational: irrational (sqrt(2: ℝ )):= sorry
 
