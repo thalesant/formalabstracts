@@ -31,12 +31,10 @@ formally
   import data.finset 
   open finset 
   universes u 
-  variables {α : Type u } 
+  variables {α : Type u }[has_union (finset α)][has_inter(finset α)]
 
-  theorem Principle_of_Inclusion_Exclusion: 
-  ∀ A: finset α, ∀ B : finset α, ∃ A_or_B : finset α, ∃ A_and_B : finset α, 
-  (to_set A_or_B=to_set A ∪ to_set B) ∧ (to_set A_and_B=to_set A ∩ to_set B)
-  ∧ (A_or_B.card = A.card + B.card - A_and_B.card)
-  := sorry 
+  theorem Principle_of_Inclusion_Exclusion : 
+  ∀ A: finset α, ∀ B : finset α, (A ∪ B).card = A.card + B.card - (A∩B).card
+  := sorry  
 
 

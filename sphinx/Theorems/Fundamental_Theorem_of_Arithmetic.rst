@@ -15,10 +15,10 @@ preformally
 .. code-block:: text
 
   check_list_perm: function that check whether two list m, n can be obtained from each other by some permutation
-  Prod_list : product of all elements of a list
+  prod : product of all elements of a list
   Is_List_Prime: check whether all elements of a list are prime 
   Fundamental_Theorem_of_Arithmetic: if n: integer and n>1 then ∃ a: list of prime numbers
-  s.t Prod_list(a)=n and ∀ b: list of prime numbers if Prod_list (b)= n then check_list_perm(a,b)=T    
+  s.t prod(a)=n and ∀ b: list of prime numbers if prod(b)= n then check_list_perm(a,b)=T    
   
 
 formally
@@ -32,14 +32,9 @@ formally
 
   definition  check_list_perm (m n : list nat ) : bool :=  m ~ n
 
-  def Prod_list: list ℕ → ℕ 
-  | [] := 1
-  | (l::h):= l * Prod_list h 
-
-  definition  Is_List_Prime (a: list ℕ) : bool := 
-  take_while (λ x, prime x) a = a
+  definition  Is_List_Prime (a: list ℕ) : bool := take_while (λ x, prime x) a  = a
 
   theorem Fundamental_Theorem_of_Arithmetic {n : ℕ } :
-  (n>1) → ∃ a: list ℕ, (Prod_list a= n) ∧ Is_List_Prime a ∧ 
-  ∀ b: list ℕ, (Prod_list b= n) ∧ Is_List_Prime b → check_list_perm a b   
-   := sorry
+  (n>1) → ∃ a: list ℕ, (prod a= n) ∧ Is_List_Prime a ∧ 
+  ∀ b: list ℕ, (prod b= n) ∧ Is_List_Prime b → check_list_perm a b   
+    := sorry

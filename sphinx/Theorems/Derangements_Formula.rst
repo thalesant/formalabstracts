@@ -37,10 +37,11 @@ Formal statement
 
 .. code-block:: lean
 
-    import data.list.perm data.set.finite
+    import data.list.perm data.set.finite data.fintype 
 
     open list
-    open finset 
+    open finset fintype 
+    
     /-permutiation (1,2,..,n)-/
     def list_ini_nat : ℕ → list ℕ
     | 0 := []
@@ -62,9 +63,13 @@ Formal statement
 
     /-check whether two lists can obtain one from the other by some permutation -/
     definition  check_list_perm (m n : list ℕ ) : bool :=  m ~ n
+    #eval check_list_perm [1, 2,3] [3,1,4]
 
-    /-the set of derangements of the set consists of n initial positive integers-/
+    /-set of derangements of set consists of n initial positive integers-/
     def set_list_derangement (n:ℕ ) : set (list ℕ) := {p | check_list_perm p (list_ini_nat n) ∧ ¬(test_list_coincide p (list_ini_nat n))}
 
+    instance (n:ℕ ):fintype (set_list_derangement (n:ℕ )):= sorry 
+
     theorem Derangements_Formula_Theorem :
-    ∀ (n:ℕ), (n > 0) → ∃ s : finset (list ℕ), (set_list_derangement n = to_set s) ∧ (s.card = subfactorial n) := sorry 
+    ∀ (n:ℕ), (n > 0) → fintype.card(set_list_derangement n) = subfactorial n := sorry 
+

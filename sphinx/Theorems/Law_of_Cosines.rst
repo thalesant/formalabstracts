@@ -50,9 +50,5 @@ formally
   theorem Law_of_Cosines {a b c : ℝ × ℝ } 
   :(a ≠ b) ∧ (c ≠ b) ∧ (a ≠ c) → ((Distance a b)^2= (Distance a c)^2 + (Distance b c)^2 -
   2*(Distance a c)*(Distance b c)* cos(Angle b c a) 
-  ∧  (Distance a c)^2= (Distance a b)^2 + (Distance b c)^2 -
-  2*(Distance a b)*(Distance b c)* cos(Angle c b a)
-  ∧ (Distance c b)^2= (Distance a c)^2 + (Distance b a)^2 -
-  2*(Distance a c)*(Distance b a)* cos(Angle b a c) )
-    := sorry
+  := sorry
 

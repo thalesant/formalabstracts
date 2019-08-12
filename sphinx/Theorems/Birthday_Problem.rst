@@ -32,25 +32,27 @@ formally
 
 .. code-block:: lean
 
-  import data.set.basic data.set.function data.finset 
+  import data.set.basic data.set.function data.finset data.fintype
   open finset
   open set 
   open function 
   open nat 
   universes u 
-  variables {α β  : Type u } 
+  variables {α: Type u }
   
-  def Not_Inj_on (S T: set α ): set(α → α) := { f:α → α | maps_to f S T ∧ ¬ (inj_on f S)}
-  def Maps_To (S T: set α ): set(α → α) := { f:α → α | maps_to f S T }
+  def Not_Inj_on (S T: finset α ): set(α → α) := {f:α → α | maps_to f (to_set S) (to_set T) ∧ ¬ (inj_on f (to_set S))}
+  def Maps_To (S T: finset α ): set(α → α) := { f:α → α | maps_to f (to_set S) (to_set T)}
 
-  theorem Birthday_Problem : ∀n:ℕ, (n>0) → ∀ (S T : finset α ), S.card=n ∧ T.card = 365 → (∃ s1: set α , ∃ t1: set α , ∃ Birth: finset (α → α ),∃ Maps: finset (α → α ), (to_set S=s1) ∧ (to_set T=t1) ∧ (to_set Birth=Not_Inj_on s1 t1) ∧ (to_set Maps=Maps_To s1 t1) ∧ (Birth.card/Maps.card = 1-(fact(365) /((365^n)*fact(365-n))))) 
+  instance(S T: finset α): fintype (Not_Inj_on S T):=sorry
+  instance(S T: finset α): fintype (Maps_To S T):=sorry 
+
+  theorem Birthday_Problem : ∀n:ℕ, (n>0) → ∀ (S T : finset α ), S.card=n ∧ T.card = 365 → fintype.card (Not_Inj_on S T)/fintype.card(Maps_To S T) = 1-(fact(365) /((365^n)*fact(365-n)))
   := sorry
 
   theorem Birthday_Problem_23 : ∀ (S T : finset α ), 
-  S.card=23 ∧ T.card = 365 → (∃ s1: set α , ∃ t1: set α , 
-      ∃ Birth: finset (α → α ),∃ Maps: finset (α → α ), (s1=to_set(S)) ∧ (t1=to_set(T)) ∧ (to_set Birth=Not_Inj_on s1 t1) ∧ (to_set Maps= Maps_To s1 t1) ∧ Birth.card/Maps.card > 0.5) 
+  S.card=23 ∧ T.card = 365 → fintype.card (Not_Inj_on S T)/fintype.card(Maps_To S T) > 0.5 
   := sorry 
 
-  theorem Birthday_Problem_70 : ∀ (S T : finset α ), S.card=70 ∧ T.card = 365 → (∃ s1: set α , ∃ t1: set α , ∃ Birth: finset (α → α ),∃ Maps: finset (α → α ), (to_set S=s1) ∧ (to_set T=t1) ∧ (to_set Birth=Not_Inj_on s1 t1) ∧ (to_set Maps=Maps_To s1 t1) ∧ Birth.card/Maps.card > 0.999) 
+  theorem Birthday_Problem_70 : ∀ (S T : finset α ), S.card=70 ∧ T.card = 365 → (fintype.card (Not_Inj_on S T)/fintype.card(Maps_To S T) > 0.999) 
   := sorry 
 
